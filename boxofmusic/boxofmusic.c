@@ -302,10 +302,17 @@ int32_t boxofmusic_app(void* p) {
 
     FuriString* file_path;
     file_path = furi_string_alloc();
+    // Changed - Set file_path before the loop so
+    //           that you return to the same folder
+    //           as the last opened file
+    furi_string_set(file_path, BOXOFMUSIC_APP_PATH_FOLDER);
 
     do {
         if(p && strlen(p)) {
             furi_string_set(file_path, (const char*)p);
+        } else {
+            // Original location to set file_path
+            // furi_string_set(file_path, BOXOFMUSIC_APP_PATH_FOLDER);
         } else {
             furi_string_set(file_path, BOXOFMUSIC_APP_PATH_FOLDER);
 
