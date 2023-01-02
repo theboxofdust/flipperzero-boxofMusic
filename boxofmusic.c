@@ -313,8 +313,6 @@ int32_t boxofmusic_app(void* p) {
         } else {
             // Original location to set file_path
             // furi_string_set(file_path, BOXOFMUSIC_APP_PATH_FOLDER);
-        } else {
-            furi_string_set(file_path, BOXOFMUSIC_APP_PATH_FOLDER);
 
             DialogsFileBrowserOptions browser_options;
             dialog_file_browser_set_basic_options(
